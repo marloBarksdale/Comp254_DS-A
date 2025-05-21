@@ -314,15 +314,12 @@ public class DoublyLinkedList<E> {
                 newList.addLast(list2.removeFirst());
             }
 
-
-
             return  newList;
 
-
-
-
-
     }
+
+
+
     // private update methods
 
     /**
