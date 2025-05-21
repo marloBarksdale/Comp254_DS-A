@@ -1,4 +1,4 @@
-/*
+package com.lynden.flood;/*
  * Copyright 2014, Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser
  *
  * Developed for use with the book:
@@ -117,7 +117,7 @@ public class DoublyLinkedList<E> {
 
     } //----------- end of nested Node class -----------
 
-    // instance variables of the DoublyLinkedList
+    // instance variables of the com.lynden.flood.DoublyLinkedList
     /**
      * Sentinel node at the beginning of the list
      */
@@ -394,4 +394,4 @@ public class DoublyLinkedList<E> {
         System.out.println(list);
         //
     }
-} //----------- end of DoublyLinkedList class -----------
+} //----------- end of com.lynden.flood.DoublyLinkedList class -----------

@@ -1,4 +1,4 @@
-/*
+package com.lynden.flood;/*
  * Copyright 2014, Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser
  *
  * Developed for use with the book:
@@ -91,7 +91,7 @@ public class CircularlyLinkedList<E> {
         }
     } //----------- end of nested Node class -----------
 
-    // instance variables of the CircularlyLinkedList
+    // instance variables of the com.lynden.flood.CircularlyLinkedList
     /**
      * The designated cursor of the list
      */
