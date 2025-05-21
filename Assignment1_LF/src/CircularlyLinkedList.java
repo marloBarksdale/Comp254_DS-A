@@ -295,6 +295,63 @@ public class CircularlyLinkedList<E> {
 
         System.out.println(circularList.sameSequence(circularList2));
 
+        System.out.println("=== Test 1: Matching rotation ===");
+        CircularlyLinkedList<Integer> list1 = new CircularlyLinkedList<>();
+        CircularlyLinkedList<Integer> list2 = new CircularlyLinkedList<>();
+
+        // list1: 10 → 20 → 30 → 40
+        list1.addLast(10);
+        list1.addLast(20);
+        list1.addLast(30);
+        list1.addLast(40);
+
+        // list2: 30 → 40 → 10 → 20 (rotation of list1)
+        list2.addLast(30);
+        list2.addLast(40);
+        list2.addLast(10);
+        list2.addLast(20);
+
+        System.out.println("List 1: " + list1);
+        System.out.println("List 2: " + list2);
+        System.out.println("Same sequence? " + list1.sameSequence(list2));  // Expected: true
+
+
+        System.out.println("\n=== Test 2: Same elements, different order ===");
+        CircularlyLinkedList<Integer> list3 = new CircularlyLinkedList<>();
+        CircularlyLinkedList<Integer> list4 = new CircularlyLinkedList<>();
+
+        // list3: 1 → 2 → 3
+        list3.addLast(1);
+        list3.addLast(2);
+        list3.addLast(3);
+
+        // list4: 2 → 1 → 3 (not a rotation of list3)
+        list4.addLast(2);
+        list4.addLast(1);
+        list4.addLast(3);
+
+        System.out.println("List 3: " + list3);
+        System.out.println("List 4: " + list4);
+        System.out.println("Same sequence? " + list3.sameSequence(list4));  // Expected: false
+
+
+        System.out.println("\n=== Test 3: Different sizes ===");
+        CircularlyLinkedList<Integer> list5 = new CircularlyLinkedList<>();
+        CircularlyLinkedList<Integer> list6 = new CircularlyLinkedList<>();
+
+        // list5: 7 → 8 → 9
+        list5.addLast(7);
+        list5.addLast(8);
+        list5.addLast(9);
+
+        // list6: 7 → 8
+        list6.addLast(7);
+        list6.addLast(8);
+
+        System.out.println("List 5: " + list5);
+        System.out.println("List 6: " + list6);
+        System.out.println("Same sequence? " + list5.sameSequence(list6));  // Expected: false
+
         //
     }
 }
