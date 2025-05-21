@@ -369,6 +369,7 @@ public class DoublyLinkedList<E> {
     }
 
     //main method
+//301413453 Lynden Flood
     public static void main(String[] args) {
         //create and populate a doubly linked list
         DoublyLinkedList<String> list = new DoublyLinkedList<String>();
