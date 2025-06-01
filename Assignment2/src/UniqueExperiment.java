@@ -3,7 +3,7 @@ import java.util.*;
 
 public class UniqueExperiment {
 
-    static final int MAX_SIZE = 100_000_000;
+    static final int MAX_SIZE = 200_000_000;
      // size of pre-generated array
     static final int TIME_LIMIT_MS = 60_000;
 

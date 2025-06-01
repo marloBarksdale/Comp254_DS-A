@@ -36,23 +36,25 @@ class Uniqueness {
 
     /**
      * Returns true if there are no duplicate elements in the array.
+     * O (n2)
      */
     public static boolean unique1(int[] data) {
         int n = data.length;
-        for (int j = 0; j < n - 1; j++)
-            for (int k = j + 1; k < n; k++)
+        for (int j = 0; j < n - 1; j++) // n-1
+            for (int k = j + 1; k < n; k++) //n-j-1
                 if (data[j] == data[k]) return false;                    // found duplicate pair
         return true;                           // if we reach this, elements are unique
     }
 
     /**
      * Returns true if there are no duplicate elements in the array.
+     * n log n
      */
     public static boolean unique2(int[] data) {
         int n = data.length;
-        int[] temp = Arrays.copyOf(data, n);   // make copy of data
-        Arrays.sort(temp);                     // and sort the copy
-        for (int j = 0; j < n - 1; j++)
+        int[] temp = Arrays.copyOf(data, n);   // make a copy of data O (n)
+        Arrays.sort(temp);                     // and sort the copy O(n log N)
+        for (int j = 0; j < n - 1; j++) //(n-1)
             if (temp[j] == temp[j + 1])            // check neighboring entries
                 return false;                      // found duplicate pair
         return true;                           // if we reach this, elements are unique
@@ -60,10 +62,11 @@ class Uniqueness {
 
     // Average-case time complexity: O(n)
     // Slower in practice due to autoboxing (int → Integer) and GC overhead from temporary object creation
+
     public static boolean unique3(int[] data) {
 
-        Set<Integer> map = new HashSet<>();
-        for (int i : data) {
+        Set<Integer> map = new HashSet<>(); //Set for storing unique values
+        for (int i : data) { //Try to add each value of the array to the set O(n)
 
             if (!map.add(i)) // Duplicate detected: value already exists in the set
 
@@ -76,14 +79,15 @@ class Uniqueness {
     // Assumes all values in 'data' are non-negative and max(data) is not too large.
     public static boolean unique4(int[] data) {
         int max = 0;
-        for (int i : data) { //Find the maximum of the array
-            max = Math.max(max, i);
+        for (int i : data) { //Find the maximum of the array O(n)
+            max = Math.max(max, i); //Assign the maximum of max or data[i] to max.
         }
 
         // Create an array to record values of data[] that have been seen
         //Uses less memory than the copy in unique2 because boolean uses 1 byte and int uses 4
+        //Assumes that all values of are non-negative
         boolean[] bucket = new boolean[max + 1];
-        for (int i : data) {
+        for (int i : data) { //O(n)
             if (bucket[i]) { // If the value was already seen, return false
                 return false;
             }
