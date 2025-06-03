@@ -32,49 +32,54 @@
 class Exercises {
 
   /** Returns the sum of the integers in given array. */
+  // O(n) + 3 = O(n)
   public static int example1(int[] arr) {
-    int n = arr.length, total = 0;
-    for (int j=0; j < n; j++)       // loop from 0 to n-1
-      total += arr[j];
+    int n = arr.length, total = 0;   // O(1)
+    for (int j=0; j < n; j++)       // loop from 0 to n-1 //O(n)
+      total += arr[j]; //O(1)
     return total;
   }
 
   /** Returns the sum of the integers with even index in given array. */
+  // O(n/2) + 2 = O(n)
   public static int example2(int[] arr) {
-    int n = arr.length, total = 0;
-    for (int j=0; j < n; j += 2)    // note the increment of 2
-      total += arr[j];
+    int n = arr.length, total = 0; // O(1)
+    for (int j=0; j < n; j += 2)    // note the increment of 2 // O(n/2)
+      total += arr[j]; //O(1)
     return total;
   }
 
   /** Returns the sum of the prefix sums of given array. */
-  public static int example3(int[] arr) {
-    int n = arr.length, total = 0;
-    for (int j=0; j < n; j++)       // loop from 0 to n-1
-      for (int k=0; k <= j; k++)    // loop from 0 to j
-        total += arr[j];
+  // O(n)*O(j)+1 = O(n^2)
+    public static int example3(int[] arr) {
+    int n = arr.length, total = 0; //O(1)
+    for (int j=0; j < n; j++)       // loop from 0 to n-1 // O(n)
+      for (int k=0; k <= j; k++)    // loop from 0 to j   //O(j)
+        total += arr[j]; //O(1)
     return total;
   }
 
   /** Returns the sum of the prefix sums of given array. */
+  // O(n) + 3 = O(n)
   public static int example4(int[] arr) {
-    int n = arr.length, prefix = 0, total = 0;
-    for (int j=0; j < n; j++) {     // loop from 0 to n-1
-      prefix += arr[j];
-      total += prefix;
+    int n = arr.length, prefix = 0, total = 0; // O(1)
+    for (int j=0; j < n; j++) {     // loop from 0 to n-1 //O(n)
+      prefix += arr[j]; // O(1)
+      total += prefix; // O(1)
     }
     return total;
   }
 
   /** Returns the number of times second array stores sum of prefix sums from first. */
+  // O(n) * O(n) * O(j) +2 = O(n^3)
   public static int example5(int[] first, int[] second) { // assume equal-length arrays
-    int n = first.length, count = 0;
-    for (int i=0; i < n; i++) {     // loop from 0 to n-1
-      int total = 0;
-      for (int j=0; j < n; j++)     // loop from 0 to n-1
-        for (int k=0; k <= j; k++)  // loop from 0 to j
-          total += first[k];
-      if (second[i] == total) count++;
+    int n = first.length, count = 0; //O(1)
+    for (int i=0; i < n; i++) {     // loop from 0 to n-1 //O(n)
+      int total = 0; // O(1)
+      for (int j=0; j < n; j++)     // loop from 0 to n-1 //O(n)
+        for (int k=0; k <= j; k++)  // loop from 0 to j //O(j)
+          total += first[k]; //O(1)
+      if (second[i] == total) count++; //O(1)
     }
     return count;
   }
