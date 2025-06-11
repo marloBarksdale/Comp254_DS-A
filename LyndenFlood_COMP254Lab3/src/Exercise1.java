@@ -23,7 +23,6 @@ public class Exercise1 {
         if(x>0)
             print(x); // print the top half
 
-
         printStars(++x, n );// recursive step. move x closer to n
 
         print(x);// print bottom half
