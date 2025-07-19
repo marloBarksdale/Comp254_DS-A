@@ -110,8 +110,7 @@ public class ArraySortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
     }
 
     public static void main(String[] args) {
-        // Student Number: [Your Student Number]
-        // Full Name: [Your Full Name]
+
 
         ArraySortedPriorityQueue<Integer, String> pq = new ArraySortedPriorityQueue<>();
 
@@ -160,7 +159,7 @@ public class ArraySortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
 
         System.out.println("\nTime Complexities:");
         System.out.println("insert(k, v): O(n) - find position O(log n) + shift O(n)");
-        System.out.println("removeMin(): O(1) - remove from front (as per assignment requirements)");
+        System.out.println("removeMin(): O(1) - remove from front");
         System.out.println("min(): O(1) - access first element");
         System.out.println("size(): O(1) - return instance variable");
         System.out.println("isEmpty(): O(1) - check size == 0");

@@ -427,16 +427,10 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
   public static void main(String[] args) {
 
 
-    // Exercise 2 Test - add this to your existing main method
+
     System.out.println("\n=== EXERCISE 2 TEST ===");
 
-// Create test tree:        A
-//                         / \
-//                        B   C
-//                       / \   \
-//                      D   E   F
-//                         /
-//                        G
+
     LinkedBinaryTree<String> tree2 = new LinkedBinaryTree<>();
     Position<String> nodeA = tree2.addRoot("A");
     Position<String> nodeB = tree2.addLeft(nodeA, "B");
