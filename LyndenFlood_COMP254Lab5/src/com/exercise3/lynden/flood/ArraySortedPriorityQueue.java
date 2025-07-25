@@ -103,7 +103,7 @@ public class ArraySortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
         StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < size; i++) {
             if (i > 0) sb.append(", ");
-            sb.append(data[i]);
+            sb.append(data[i].getValue());
         }
         sb.append("]");
         return sb.toString();
@@ -133,7 +133,8 @@ public class ArraySortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
         System.out.println("\nRemoving elements:");
         while (!pq.isEmpty()) {
             Entry<Integer, String> removed = pq.removeMin();
-            System.out.println("Removed: " + removed + ", Remaining: " + pq);
+            if(removed.getValue()!=null)
+             System.out.println("Removed: " + removed.getValue() + ", Remaining: " + pq);
         }
 
         // Test edge cases
@@ -154,7 +155,7 @@ public class ArraySortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
 
         System.out.println("Reverse PQ: " + reversePQ);
         while (!reversePQ.isEmpty()) {
-            System.out.println("Removed: " + reversePQ.removeMin());
+            System.out.println("Removed: " + reversePQ.removeMin().getValue());
         }
 
         System.out.println("\nTime Complexities:");
