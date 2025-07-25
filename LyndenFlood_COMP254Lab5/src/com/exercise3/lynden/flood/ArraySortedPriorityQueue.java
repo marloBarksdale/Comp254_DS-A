@@ -127,14 +127,14 @@ public class ArraySortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
 
         System.out.println("After insertions: " + pq);
         System.out.println("Size: " + pq.size());
-        System.out.println("Min: " + pq.min());
+        System.out.println("Min: " + pq.min().getValue());
 
         // Test removeMin
         System.out.println("\nRemoving elements:");
         while (!pq.isEmpty()) {
             Entry<Integer, String> removed = pq.removeMin();
-            if(removed.getValue()!=null)
-             System.out.println("Removed: " + removed.getValue() + ", Remaining: " + pq);
+
+             System.out.println("Removed: " + removed.getValue()+ ", Remaining: " + pq);
         }
 
         // Test edge cases
